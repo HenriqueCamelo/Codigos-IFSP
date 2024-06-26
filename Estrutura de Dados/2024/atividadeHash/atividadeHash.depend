@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1709836520 source:c:\users\henrique\documents\testecode\atividadehash\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"hashTable.h"
+
+1709831569 source:c:\users\henrique\documents\testecode\atividadehash\hashtable.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"hashTable.h"
+
+1709831460 c:\users\henrique\documents\testecode\atividadehash\hashtable.h
+	<string.h>
+

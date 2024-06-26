@@ -1,0 +1,91 @@
+# depslib dependency file v1.0
+1702239561 source:c:\users\henrique\documents\testecode\projetof\projetof.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1702230592 c:\users\henrique\documents\testecode\projetof\projetof.h
+	<string.h>
+
+1702239787 source:c:\users\henrique\documents\testecode\projetof\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1701910226 source:c:\users\aluno\desktop\casa\projetof\projetof.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1701910220 c:\users\aluno\desktop\casa\projetof\projetof.h
+	<string.h>
+
+1701908599 source:c:\users\aluno\desktop\casa\projetof\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1701984108 source:c:\users\henrique\desktop\códigos\projetof\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1701984183 c:\users\henrique\desktop\códigos\projetof\projetof.h
+	<string.h>
+
+1701984136 source:c:\users\henrique\desktop\códigos\projetof\projetof.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1702250176 source:c:\users\henrique\documents\testecode\projetof salvamento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1702250140 c:\users\henrique\documents\testecode\projetof salvamento\projetof.h
+	<string.h>
+
+1702297001 source:c:\users\henrique\documents\testecode\projetof salvamento\projetof.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1702330802 source:e:\projetohenrique\projetof salvo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1702250142 e:\projetohenrique\projetof salvo\projetof.h
+	<string.h>
+
+1702331334 source:e:\projetohenrique\projetof salvo\projetof.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1702330802 source:c:\users\henrique\desktop\projetof salvo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+
+1702345334 c:\users\henrique\desktop\projetof salvo\projetof.h
+	<string.h>
+
+1702345370 source:c:\users\henrique\desktop\projetof salvo\projetof.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetoF.h"
+

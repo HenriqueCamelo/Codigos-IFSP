@@ -1,0 +1,61 @@
+# depslib dependency file v1.0
+1712770066 source:c:\users\henrique\documents\testecode\arvorebinaria\arvorebinaria.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+
+1712771723 c:\users\henrique\documents\testecode\arvorebinaria\arvorebinaria.h
+
+1712771651 source:c:\users\henrique\documents\testecode\arvorebinaria\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+
+1713314163 source:c:\users\aluno\desktop\arvorebinaria\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+
+1713314233 c:\users\aluno\desktop\arvorebinaria\arvorebinaria.h
+
+1713311078 source:c:\users\aluno\desktop\arvorebinaria\arvorebinaria.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+
+1713368298 source:c:\users\henrique\desktop\arvorebinaria\arvorebinaria.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+
+1713314234 c:\users\henrique\desktop\arvorebinaria\arvorebinaria.h
+
+1713368594 source:c:\users\henrique\desktop\arvorebinaria\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+
+1713368298 source:c:\users\henrique\desktop\coisas\arvorebinaria\arvorebinaria\arvorebinaria.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+
+1713314234 c:\users\henrique\desktop\coisas\arvorebinaria\arvorebinaria\arvorebinaria.h
+
+1713372134 source:c:\users\henrique\desktop\coisas\arvorebinaria\arvorebinaria\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+
+1713368298 source:c:\users\henrique\documents\testecode\arvorebinaria\arvorebinaria\arvorebinaria.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+
+1713314234 c:\users\henrique\documents\testecode\arvorebinaria\arvorebinaria\arvorebinaria.h
+
+1713372134 source:c:\users\henrique\documents\testecode\arvorebinaria\arvorebinaria\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreBinaria.h"
+

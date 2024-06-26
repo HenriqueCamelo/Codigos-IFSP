@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1700756783 source:c:\users\henrique\documents\testecode\atividadepilha\pilhad.c
+	<stdio.h>
+	<stdlib.h>
+	"pilhaD.h"
+
+1700757024 c:\users\henrique\documents\testecode\atividadepilha\pilhad.h
+
+1700756849 source:c:\users\henrique\documents\testecode\atividadepilha\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilhaD.h"
+

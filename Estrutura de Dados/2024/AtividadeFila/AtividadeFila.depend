@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1700757725 source:c:\users\henrique\documents\testecode\atividadefila\main.c
+	<stdio.h>
+	<stdlib.h>
+	"filaD.h"
+
+1700751113 c:\users\henrique\documents\testecode\atividadefila\filad.h
+
+1700750926 source:c:\users\henrique\documents\testecode\atividadefila\filad.c
+	<stdio.h>
+	<stdlib.h>
+	"filaD.h"
+
