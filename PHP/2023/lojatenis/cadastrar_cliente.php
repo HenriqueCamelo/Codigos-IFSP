@@ -1,0 +1,25 @@
+<?php
+require_once 'configuracao.php';
+
+if(isset($_POST['btncadastrar']))
+{
+    $nome = filter_input(INPUT_POST,'txtnome');
+    $fone = filter_input(INPUT_POST,'txtfone');
+    $data = filter_input(INPUT_POST,'txtdatanasc');
+
+    $sql = $conexao->prepare("INSERT into tabclientes (cliNome, cliTelefone, cliDataNasc) VALUES (:nome,:fone,:date)");
+    $sql->bindValue(':nome', $nome);
+    $sql->bindValue(':fone', $fone);
+    $sql->bindValue(':date', $data);
+    $sql->execute();
+    header('Locatio: listar.php');
+}
+    echo " $nome $data $fone ";
+
+
+
+
+
+
+
+?>
