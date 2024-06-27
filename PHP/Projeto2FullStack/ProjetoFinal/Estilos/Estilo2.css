@@ -1,0 +1,553 @@
+html, body {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    font-family: 'Share Tech', sans-serif;
+    text-align:center;
+    scroll-behavior: smooth;
+    background:  linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,82,255,1) 100%);
+}
+
+.content {
+    position: relative;
+    min-height: 90%;
+}
+
+.pdf {
+    width:100%;
+    height:100%;
+    align-items: center;
+    background-image: url(../Imagens/rose-petals.svg);
+    background-size:auto; 
+    position: fixed; 
+}
+
+.sobre {
+    margin-top: 8%;
+  
+}
+
+.sobre h1 {
+    color: white;
+    font-size: 2rem;
+    color: #f7f44b;
+    margin-top: 8%;
+}
+
+.sobre p {
+    text-indent: 8%;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.cidade {
+    width: 95%;
+    height: fit-content;
+}
+
+.cidade, .principios{
+    border-radius: 20px;
+    margin: 2%;
+}
+
+.principios{
+    width: 80%;
+    height: max-content;
+    margin-top: 5%;
+}
+
+.logistica {
+    width: 60%;
+    margin: 2%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mini_e { 
+    position: absolute;
+    left: 88%;
+    top: 7%;
+    width: 40px;
+    box-sizing: border-box;
+}
+
+.nav {
+    overflow: hidden;
+    background-color:#f7f44b;
+    position:fixed;
+    z-index:99;
+    width: 100%; 
+}
+
+.nav #itens {
+    display: none;
+}
+  
+.nav a {
+    color:  rgb(20,22,31);
+    padding: 6% 5%;
+    text-decoration: none;
+    font-size: 1.4rem;
+    display: block;
+}
+  
+.nav a.material-symbols-outlined {
+    color:rgb(20,22,31);
+    background: #f7f44b;
+    display: block;
+    position: absolute;
+    left: 1%;
+    top: 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+a#barra.material-symbols-outlined{
+    padding: 4% 0 1% 2%;
+}
+
+.logo {
+    padding: 0 0 10px 0;
+}
+
+.logo img {
+    border-radius: 10px;
+}
+
+.video {
+	position:relative;
+    padding-top: 3rem;
+	bottom: 0;
+    width: 100%;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.2;
+}
+
+.slogan {
+    text-align:justify;
+    position:absolute;
+    left: 10%;
+    right: 10%;
+    top: 1.5%;
+    color: white;
+    background-color: transparent;
+    width: 80%;
+    font-size: 1.5rem;
+    padding-top: 3.5rem;
+}
+
+.galeria {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 9vw);
+    grid-gap: 1px;
+    cursor: pointer;
+    padding-top: 5px;   
+}
+
+.produtos {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 8%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.produto-1 {
+     grid-column-start: 1;
+     grid-column-end: 2;
+    grid-row-start: 1;
+     grid-row-end: 5;
+}
+
+.produto-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+   grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.produto-3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+   grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.produto-4 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+   grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+#div_exibe_desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: justify;
+    height: 5%;   
+}
+
+.novo_p {
+    background-color: rgb(24, 27, 43);
+    text-align: center;
+    width: 70%;
+    border-radius: 20px;
+    padding: 6%;  
+}
+
+.fundo .texto {
+    margin-top: 10%;
+}
+
+.texto {
+    padding: 0;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.fundo {
+    margin: 5% 0 10% 0;
+}
+
+.imagens_loja {
+    position: relative;
+    width:340px;
+    height: 200px;
+    margin: 0 auto 0 auto;
+    background-size: cover;
+    border-radius: 5%;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-name: troca_figura;
+}
+
+@keyframes troca_figura {
+    0% { background-image: url(../Imagens/loja1.jpg);  }
+    25% { background-image: url(../Imagens/loja2.jpg);  }
+    50% { background-image: url(../Imagens/loja3.jpg);  }
+    75% { background-image: url(../Imagens/loja4.jpg);  }
+    100% { background-image: url(../Imagens/loja1.jpg);  }
+}
+
+h3 .texto {
+    margin-top: 10%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5% 0 0 0;
+}
+
+.img {
+    background-color: azure;
+    color:  rgb(20,22,31);
+    width: 98%;
+    margin: 0px;
+    border-radius: 5%;
+}
+
+.container p {
+    font-size: 1rem;
+}
+
+.codigo {
+    margin: 1px;
+    text-align:justify;
+    font-size: 1rem;
+    color: white;
+    font-weight: normal;
+    background-color: whitesmoke;
+    color:  rgb(20,22,31);
+    border-radius: 4px;
+    width: fit-content;
+    background-image: url(../Imagens/acordo.png);
+    background-size: 20%;
+    background-repeat: no-repeat;
+    padding:1% 3% 7% 22% ;
+    align-content: center;
+}
+
+.img_1, .img_2, .img_3 {
+    margin-bottom: 3%;
+}
+
+form {
+    width: 85%;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 30px auto;
+}
+
+p {
+    margin-top: 20px;
+    color: azure;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.botao {
+    background-color: hsl(59, 91%, 63%);
+    color: rgb(20,22,31);
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 15px;
+    width: 95%;
+    font-family: inherit;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;    
+}
+
+#nome, #email, #fone {
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 15px;
+    padding:15px 15px ;
+    margin-bottom: 20px;
+}
+
+#top, #pro,  #eti, #exp {
+    padding-top: 4.8rem;
+}
+
+footer {
+    background-color: #f7f44b;
+    color: rgb(20,22,31);
+    text-align: center;
+    padding: 10px;
+    position: relative; /* Alterado para relativo */
+    width: 100%;
+    margin-top: auto; /* Adicionado para garantir que o rodapé fique no fundo */
+}
+
+
+
+
+
+
+@media (min-width:768px) 
+{
+    
+    .mini_e { 
+        position: absolute;
+        top: 6%;
+        left: 88%;
+        width: 62px;
+        border-radius: 25px ;       
+    }
+
+    .nav {
+        padding: 0px 0px;    
+    }
+
+    .nav a {
+        color:  rgb(20,22,31);
+        padding: 2% 2%;
+        text-decoration: none;
+        font-size: 2rem;
+        display: block;
+    }
+
+    .nav a:hover {
+        font-size: 2.5rem;
+        color: rgb(48, 74, 192);
+    }
+
+    .mini_e:hover {
+        width: 65px;
+    }
+
+    .nav a.material-symbols-outlined {
+        color:rgb(20,22,31);
+        background: #f7f44b;
+        display: block;
+        position: absolute;
+        left: 1%;
+        top: 1%;
+        cursor: pointer;
+        font-size: 2rem;
+    }
+    a#barra.material-symbols-outlined{
+        padding:  1% 2%;
+    }
+    
+    a {
+        font-size: 1.5rem;
+    }
+    
+    a:hover {
+        font-size: 1.6rem;
+        color: rgb(48, 74, 192);
+    }
+
+    footer {
+        background-color: #f7f44b;
+        color: rgb(20,22,31);
+        text-align: center;
+        padding: 10px;
+        position: relative; /* Alterado para relativo */
+        width: 98.9%;
+        margin-top: auto; /* Adicionado para garantir que o rodapé fique no fundo */
+    }
+
+    .slogan {
+        width: 92%;
+        font-size: 3rem;
+        top: 8%;
+        text-align:center;
+        padding-top: 0px;
+        left: 4%;
+        right: 4%;
+    }
+
+    .video {
+        padding-top: 0px;
+        margin-bottom: 0%;
+    }
+
+    .botao {
+        font-size: 2rem;
+        padding: 20px;
+    }
+
+    .botao:hover {
+        font-size: 1.8rem;
+        color: rgb(48, 74, 192);
+    }
+
+    .texto {
+        font-size: 3rem;
+        color: white;
+        font-weight: bolder;
+    }
+
+    p{
+        font-size: 2rem;
+        margin: 0;
+    }
+    
+    .img_1:hover,  .img_2:hover, .img_3:hover {
+        width: 33%;
+        transition: 4s;
+    }
+
+    .imagens_loja {
+        width:700px;
+        height: 400px;
+    }
+
+    .img_1, .img_2, .img_3{
+        width: 30%;   
+    }
+    
+    .codigo {
+        width: 95%;      
+        background-size: 8%;
+        font-size: 2rem;
+        margin: auto;
+        box-sizing:border-box;
+        border-radius: 20px;
+        padding-left: 9%;
+        padding-bottom: 2%;
+        margin-bottom: 10%;
+    }
+
+    form {
+        width: 75%;
+        display:flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 0px;
+        margin: 5% auto;
+    }
+
+    form .botao {
+    font-size: 1.5rem;
+    padding: 20px;
+    border-radius: 15px;
+    width: 45%;
+    }
+
+    .pdf {
+        width: 100%;
+        height: 100%;
+    }
+
+    .sobre h1 {
+        color: white;
+        font-size: 4rem;
+        color: #f7f44b;
+    }
+
+    .desc2{
+        color: black;
+        font-size: 2rem;
+    }
+    
+    .sobre p {
+        text-indent: 8%;
+        font-size: 2rem;
+        text-align: justify;   
+    }
+
+    .sobre {
+        margin-top: 1%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .cidade, .principios{
+        border-radius: 40px;
+        margin: 2%;
+        width: 70%;
+    }
+
+    .cidade {
+        width: 60%;
+    }
+
+    .cidade:hover, .principios:hover{
+        border-radius: 15px;
+        transition: 1s;
+    }
+
+    .logistica {
+        width: 30%;
+    }
+
+    .container2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ul2
+    {
+        list-style-type: none; 
+    }
+    
+}
