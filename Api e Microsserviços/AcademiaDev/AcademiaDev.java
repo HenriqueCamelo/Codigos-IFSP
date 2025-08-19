@@ -68,16 +68,17 @@ public class AcademiaDev {
             this.email = email;
         }
 
-        public boolean ConsultarCatalogodeCursos(int currentEnrollments, String comando) {
-            return currentEnrollments < 3;
+        public boolean ConsultarCatalogodeCursos(Enrollment currentEnrollments) {
+            return currentEnrollments.getCourses();
         }
 
-        public boolean AbrirTicketdeSuporte(int currentEnrollments, String comando) {
-            return currentEnrollments < 3;
+        public boolean AbrirTicketdeSuporte(String title, String message, User user, LocalDateTime createdAt) {
+            SupportTicket createTicket = SupportTicket(title, message, user, createdAt);
+            return true;
         }
 
-        public boolean AutenticaçãoSimples(int currentEnrollments, String comando) {
-            return currentEnrollments < 3;
+        public boolean AutenticaçãoSimples(int name, String email) {
+            return true;
         }
     }
 
@@ -88,6 +89,43 @@ public class AcademiaDev {
         private String message;
         private User user;
         private LocalDateTime createdAt;
+
+        public SupportTicket(String title, String message, User user, LocalDateTime createdAt){
+            this.title = title;
+            this.message = message;
+            this.user = user;
+            this.createdAt = createdAt;
+        }
+
+    }
+
+    public class RelatorioEAnalisesdaPlataforma{
+        
+        public DifficultyLevel difficultyLevel;
+        public String instructorName;
+        public SubscriptionPlan subscriptionPlan;
+        private double progress;
+        public Status status;
+
+
+        public enum DifficultyLevel { BEGINNER, INTERMEDIATE, ADVANCED };
+        public enum Status { ACTIVE, INACTIVE };
+
+        Function<Courses, String> getDifficulty = Courses -> Courses.getDifficultyLevel();
+        System.out.println(getDifficulty.apply(Course));
+
+        Function<Courses, String> getInstructor = Courses -> Courses.getInstructorName();
+        System.out.println(getDifficulty.apply(Course));
+
+        Function<Courses, String> getSubscriptionPlan = Courses -> Courses.getSubscriptionPlan();
+        System.out.println(getSubscriptionPlan.apply(Course));
+
+        Function<Enrollment, Integer> getMedia = Enrollment -> Enrollment.getSubscriptionPlan();
+        System.out.println(getSubscriptionPlan.apply(Course));
+
+        Function<Enrollment, Integer> getStudentWithMoreEnrolment = Enrollment -> Enrollment.getCourses();
+        System.out.println(getSubscriptionPlan.apply(Course));
+
     }
     
 
@@ -130,8 +168,10 @@ public class AcademiaDev {
 
         }
 
-        public boolean AtenderTicketsdeSuporte(int currentEnrollments, String comando) {
-            return currentEnrollments < 3;
+        public boolean AtenderTicketsdeSuporte(SupportTicket currentSupportTicket, boolean atendido) {
+            System.out.println(currentSupportTicket.);
+
+            return atendido;
         }
 
         public boolean GerarRelatórioseAnálises(int currentEnrollments, String comando) {
@@ -181,8 +221,10 @@ public class AcademiaDev {
             currentEnrollment.setProgress(progresso);
         }
 
-        public boolean CancelarMatrícula(int currentEnrollments, String comando) {
-            return currentEnrollments < 3;
+        public boolean CancelarMatrícula(Enrollment currentEnrollments) {
+            currentEnrollments.getCourses();
+
+            
         }
 
 
@@ -196,6 +238,10 @@ public class AcademiaDev {
         private double progress; // 0.0 to 100.0
 
         private List<Courses> courses;
+
+        public double getProgress() {
+            return this.progress;
+        }
 
         public void setProgress(double progress) {
             this.progress = progress;
@@ -234,7 +280,6 @@ public class AcademiaDev {
         }
         
         
-
     }
 
 
