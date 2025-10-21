@@ -11,11 +11,12 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import br.ifsp.granja.dto.animal.AnimalResponseDTO;
-import br.ifsp.granja.exception.ResourceNotFoundException;
+import br.ifsp.granja.model.Alimento;
 import br.ifsp.granja.model.Animal;
 import br.ifsp.granja.model.Peso;
 import br.ifsp.granja.model.VacinaAnimal;
 import br.ifsp.granja.repository.AnimalRepository;
+import br.ifsp.granja.service.DespacheService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
@@ -30,6 +31,9 @@ public class AnimalController {
 
     @Autowired
     ModelMapper modelMapper;
+
+    @Autowired
+    private DespacheService despacheService;
 
     @Operation(summary = "Buscar por todos so animais")
     @GetMapping
@@ -55,20 +59,20 @@ public class AnimalController {
     }
 
     @PostMapping
-@ResponseStatus(HttpStatus.CREATED)
-public AnimalResponseDTO createAnimal(@Valid @RequestBody AnimalResponseDTO dto) {
-    Animal animal = new Animal(
-        dto.getNomeAnimal(),
-        dto.getSexoAnimal(),
-        dto.getDataNascimentoAnimal(),
-        dto.getFazenda(),
-        dto.getGranja(),
-        dto.getPaiAnimal(),
-        dto.getMaeAnimal(),
-        dto.getVendedor(),
-        dto.getPrecoAnimal(),
-        dto.getDataCompra(),
-        dto.getDadosExtra()
+    @ResponseStatus(HttpStatus.CREATED)
+    public AnimalResponseDTO createAnimal(@Valid @RequestBody AnimalResponseDTO dto) {
+        Animal animal = new Animal(
+            dto.getNomeAnimal(),
+            dto.getSexoAnimal(),
+            dto.getDataNascimentoAnimal(),
+            dto.getFazenda(),
+            dto.getGranja(),
+            dto.getPaiAnimal(),
+            dto.getMaeAnimal(),
+            dto.getVendedor(),
+            dto.getPrecoAnimal(),
+            dto.getDataCompra(),
+            dto.getDadosExtra()
     );
 
     // ✅ Converte VacinaResponseDTO → VacinaAnimal
@@ -101,6 +105,21 @@ public AnimalResponseDTO createAnimal(@Valid @RequestBody AnimalResponseDTO dto)
         animal.setPesos(pesos);
     }
 
+    if (dto.getAlimentos() != null && !dto.getAlimentos().isEmpty()) {
+        List<Alimento> alimentos = dto.getAlimentos().stream()
+            .map(p -> {
+                Alimento alimento = new Alimento();
+                alimento.setDataRegistroAlimento(p.getDataRegistroAlimento());
+                alimento.setQuantidadeAgua(p.getQuantidadeAgua());
+                alimento.setQuantidadeRacao(p.getQuantidadeRacao());
+                alimento.setAnimal(animal);
+                return alimento;
+            })
+            .toList();
+
+        animal.setAlimentos(alimentos);
+    }
+
     Animal saved = animalRepository.save(animal);
     return modelMapper.map(saved, AnimalResponseDTO.class);
 }
@@ -128,13 +147,10 @@ public AnimalResponseDTO createAnimal(@Valid @RequestBody AnimalResponseDTO dto)
         return modelMapper.map(updated, AnimalResponseDTO.class);
     }
 
+    @Operation(summary = "Deletar animal e registrar data de despache")
     @DeleteMapping("/{id}")
-    public void deleteAnimal(@PathVariable Long id){
-        if (!animalRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Animal não encontrado: "+ id);
-
-        }
-        
-        animalRepository.deleteById(id);
+    public void deleteAnimal(@PathVariable Long id,
+                             @RequestParam(required = false) String motivo) {
+        despacheService.despacharAnimal(id, motivo);
     }
 }

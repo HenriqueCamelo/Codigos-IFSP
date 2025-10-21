@@ -56,6 +56,10 @@ public class Animal {
 	@OneToMany(mappedBy = "animal", cascade = CascadeType.ALL, orphanRemoval = true)
 	@JsonManagedReference
 	private List<Peso> pesos;
+
+	@OneToMany(mappedBy = "animal", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonManagedReference
+	private List<Alimento> alimento;
 	
 	public Animal(){
 
@@ -167,6 +171,17 @@ public class Animal {
 		this.pesos = pesos;
 		if (pesos != null) {
 			for (Peso p : pesos) {
+				p.setAnimal(this);
+			}
+		}
+	}
+	public List<Alimento> getAlimentos(){
+		return alimento;
+	}
+	public void setAlimentos(List<Alimento> alimentos) {
+		this.alimento = alimentos;
+		if (alimentos != null) {
+			for (Alimento p : alimentos) {
 				p.setAnimal(this);
 			}
 		}

@@ -1,0 +1,16 @@
+package br.ifsp.granja.dto.alimento;
+import java.sql.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class AlimentoResponseDTO {
+    private Long id;
+    private Date dataRegistroAlimento;
+    private float quantidadeAgua;
+    private float quantidadeRacao;
+}

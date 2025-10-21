@@ -3,6 +3,7 @@ package br.ifsp.granja.dto.animal;
 import java.sql.Date;
 import java.util.List;
 
+import br.ifsp.granja.dto.alimento.AlimentoRequestDTO;
 import br.ifsp.granja.dto.peso.PesoRequestDTO;
 import br.ifsp.granja.dto.vacina.VacinaRequestDTO;
 import jakarta.validation.constraints.NotBlank;
@@ -51,4 +52,6 @@ public class AnimalRequestDTO {
 	private List<VacinaRequestDTO> vacinas;
 
 	private List<PesoRequestDTO> pesos;
+
+    private List<AlimentoRequestDTO> alimentos;
 }

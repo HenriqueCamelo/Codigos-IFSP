@@ -3,6 +3,7 @@ package br.ifsp.granja.dto.animal;
 import java.sql.Date;
 import java.util.List;
 
+import br.ifsp.granja.dto.alimento.AlimentoResponseDTO;
 import br.ifsp.granja.dto.peso.PesoResponseDTO;
 import br.ifsp.granja.dto.vacina.VacinaResponseDTO;
 import lombok.AllArgsConstructor;
@@ -27,5 +28,5 @@ public class AnimalResponseDTO {
     private String dadosExtra;
     private List<VacinaResponseDTO> vacinas;
     private List<PesoResponseDTO> pesos;
-
+    private List<AlimentoResponseDTO> alimentos;
 }
