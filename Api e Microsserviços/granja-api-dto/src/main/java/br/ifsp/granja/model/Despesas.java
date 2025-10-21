@@ -29,10 +29,10 @@ public class Despesas {
     @NotBlank(message = "Digite o endereço da loja em que foi adquirido o produto")
     private String bairro; 
 	
-    @NotBlank
+    @NotBlank(message = "CPF é obrigatório")
     @Pattern(regexp = "^(\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}|\\d{11})$",
             message = "CPF inválido. Use 000.000.000-00 ou 00000000000")
-    private double CPF; 
+    private String cpf; 
 	
     @NotNull(message = "A despesa deve conter um valor")
     private double valor; 
@@ -47,14 +47,14 @@ public class Despesas {
 
 	}
 	
-	public Despesas(Date dataCompra, String endereco, String cidade, String bairro, double cPF, double valor,
+	public Despesas(Date dataCompra, String endereco, String cidade, String bairro, String cpf, double valor,
 			int numeroParcelas, String fazenda) {
 		
 		this.dataCompra = dataCompra;
 		this.endereco = endereco;
 		this.cidade = cidade;
 		this.bairro = bairro;
-		this.CPF = cPF;
+		this.cpf = cpf;
 		this.valor = valor;
 		this.numeroParcelas = numeroParcelas;
 		this.fazenda = fazenda;
@@ -90,11 +90,11 @@ public class Despesas {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	public double getCNPJCPF() {
-		return CPF;
+	public String getCpf() {
+		return cpf;
 	}
-	public void setCNPJCPF(double CPF) {
-		this.CPF = CPF;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	public double getValor() {
 		return valor;

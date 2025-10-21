@@ -54,6 +54,7 @@ public class Animal {
 	private List<VacinaAnimal> vacinas;
 
 	@OneToMany(mappedBy = "animal", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonManagedReference
 	private List<Peso> pesos;
 	
 	public Animal(){
@@ -76,11 +77,11 @@ public class Animal {
 		this.dadosExtra = dadosExtra;
 	}
 	
-	public Long getIdAnimal() {
+	public Long getId() {
 		return id;
 	}
-	public void setIdAnimal(Long idAnimal) {
-		this.id = idAnimal;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getNomeAnimal() {
 		return nomeAnimal;
@@ -151,13 +152,24 @@ public class Animal {
 	public List<VacinaAnimal> getVacinas(){
 		return vacinas;
 	}
-	public void setVacinas(List<VacinaAnimal> vacinas){
+	public void setVacinas(List<VacinaAnimal> vacinas) {
 		this.vacinas = vacinas;
+		if (vacinas != null) {
+			for (VacinaAnimal v : vacinas) {
+				v.setAnimal(this);
+			}
+		}
 	}
 	public List<Peso> getPesos(){
 		return pesos;
 	}
-	public void setPesos(List<Peso> pesos){
+	public void setPesos(List<Peso> pesos) {
 		this.pesos = pesos;
+		if (pesos != null) {
+			for (Peso p : pesos) {
+				p.setAnimal(this);
+			}
+		}
 	}
+	
 }

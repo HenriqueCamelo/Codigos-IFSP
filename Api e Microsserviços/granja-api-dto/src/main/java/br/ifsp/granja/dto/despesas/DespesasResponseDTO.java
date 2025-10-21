@@ -15,7 +15,7 @@ public class DespesasResponseDTO {
     private String endereco; 
     private String cidade; 
     private String bairro; 
-    private double CPF; 
+    private String CPF; 
     private double valor; 
     private int numeroParcelas;
     private String fazenda;

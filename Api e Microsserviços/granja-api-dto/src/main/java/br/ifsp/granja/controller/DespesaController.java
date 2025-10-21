@@ -69,7 +69,7 @@ public class DespesaController {
         existingDespesa.setEndereco(dto.getEndereco());
         existingDespesa.setCidade(dto.getCidade());
         existingDespesa.setBairro(dto.getBairro());
-        existingDespesa.setCNPJCPF(dto.getCNPJCPF());
+        existingDespesa.setCpf(dto.getCpf());
         existingDespesa.setValor(dto.getValor());
         existingDespesa.setNumeroParcelas(dto.getNumeroParcelas());
         existingDespesa.setFazenda(dto.getFazenda());

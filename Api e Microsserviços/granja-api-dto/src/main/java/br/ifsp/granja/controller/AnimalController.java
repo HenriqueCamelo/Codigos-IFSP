@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import br.ifsp.granja.dto.animal.AnimalResponseDTO;
 import br.ifsp.granja.exception.ResourceNotFoundException;
 import br.ifsp.granja.model.Animal;
+import br.ifsp.granja.model.Peso;
+import br.ifsp.granja.model.VacinaAnimal;
 import br.ifsp.granja.repository.AnimalRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
@@ -52,17 +54,57 @@ public class AnimalController {
             .map(animal ->modelMapper.map(animal, AnimalResponseDTO.class));
     }
 
-    @Operation(summary = "Criar novo animal")
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public AnimalResponseDTO createAnimal(@Valid @RequestBody AnimalResponseDTO dto){
-        Animal animal = new Animal(dto.getNomeAnimal(), dto.getSexoAnimal(), dto.getDataNascimentoAnimal(), dto.getFazenda(), dto.getGranja(),
-			dto.getPaiAnimal(), dto.getMaeAnimal(), dto.getVendedor(), dto.getPrecoAnimal(), dto.getDataCompra(),
-			dto.getDadosExtra());
-        
-        Animal saved = animalRepository.save(animal);
-        return modelMapper.map(saved, AnimalResponseDTO.class);
+@ResponseStatus(HttpStatus.CREATED)
+public AnimalResponseDTO createAnimal(@Valid @RequestBody AnimalResponseDTO dto) {
+    Animal animal = new Animal(
+        dto.getNomeAnimal(),
+        dto.getSexoAnimal(),
+        dto.getDataNascimentoAnimal(),
+        dto.getFazenda(),
+        dto.getGranja(),
+        dto.getPaiAnimal(),
+        dto.getMaeAnimal(),
+        dto.getVendedor(),
+        dto.getPrecoAnimal(),
+        dto.getDataCompra(),
+        dto.getDadosExtra()
+    );
+
+    // ✅ Converte VacinaResponseDTO → VacinaAnimal
+    if (dto.getVacinas() != null && !dto.getVacinas().isEmpty()) {
+        List<VacinaAnimal> vacinas = dto.getVacinas().stream()
+            .map(v -> {
+                VacinaAnimal va = new VacinaAnimal();
+                va.setDataVacina(v.getDataVacina());
+                va.setNomeVacina(v.getNomeVacina());
+                va.setAnimal(animal);
+                return va;
+            })
+            .toList();
+
+        animal.setVacinas(vacinas);
     }
+
+    // ✅ Mesmo raciocínio pode ser usado para pesos, se tiver DTO
+    if (dto.getPesos() != null && !dto.getPesos().isEmpty()) {
+        List<Peso> pesos = dto.getPesos().stream()
+            .map(p -> {
+                Peso peso = new Peso();
+                peso.setDataPesagem(p.getDataPesagem());
+                peso.setPesoAnimal(p.getPesoAnimal());
+                peso.setAnimal(animal);
+                return peso;
+            })
+            .toList();
+
+        animal.setPesos(pesos);
+    }
+
+    Animal saved = animalRepository.save(animal);
+    return modelMapper.map(saved, AnimalResponseDTO.class);
+}
+
 
     @PutMapping("/{id}")
     public AnimalResponseDTO updateAnimal(@PathVariable Long id, @Valid @RequestBody AnimalResponseDTO dto){

@@ -30,7 +30,7 @@ public class DespesasRequestDTO {
     @NotBlank
     @Pattern(regexp = "^(\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}|\\d{11})$",
             message = "CPF inválido. Use 000.000.000-00 ou 00000000000")
-    private double CPF; 
+    private String CPF; 
 	
     @NotNull(message = "A despesa deve conter um valor")
     private double valor; 
