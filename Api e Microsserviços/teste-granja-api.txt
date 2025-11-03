@@ -1,0 +1,18 @@
+{
+  "nomeAnimal": "Esperança",
+  "sexoAnimal": "Fêmea",
+  "dataNascimentoAnimal": "2023-06-10",
+  "fazenda": "Fazenda Esperança",
+  "granja": "Granja Bela Vista",
+  "paiAnimal": "Galo Rei",
+  "maeAnimal": "Galinha Rainha",
+  "vendedor": "AgroAvícola LTDA",
+  "precoAnimal": 50.75,
+  "dataCompra": "2023-07-01",
+  "dadosExtra": "Ave saudável e ativa.",
+  "vacinas": [
+    { "dataVacina": "2025-09-30", "nomeVacina": "Vacina contra Newcastle" },
+    { "dataVacina": "2025-10-01", "nomeVacina": "Reforço Newcastle" }
+  ],
+  "pesos": []
+}
