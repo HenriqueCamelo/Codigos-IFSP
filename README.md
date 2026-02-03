@@ -1,4 +1,5 @@
-# Códigos IFSP <img width="50" height="50" alt="image" src="https://github.com/user-attachments/assets/6c6a5038-026a-4d28-a0b2-8c7b92bf4c30" />
+# Códigos IFSP <img width="50" height="50" alt="image" src="https://github.com/user-attachments/assets/623d4ff9-9598-466b-b629-0844711d5eee" />
+
 
 
 Códigos desenvolvidos durante a graduação no Instituto Federal de Educação, Ciência e Tecnologia de São Paulo.
